@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Exploratory Analysis - Alexa Ryan Fisher</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="home.html" class="logo">Home</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="home.html">Portfolio</a></li>
+							<li><a href="about.html">About</a></li>
+							<li class="active"><a href="exploration.html">Exploratory Analysis</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/alexaryanfisher/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/alexaryanfisher" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+                	<div id="main">
+                        <div class="col-6 col-6-small">
+                            <ul class="actions stacked">
+                                <li><a href="home.html" class="button small">Back</a></li>
+                            </ul>
+                            </div>
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<h2> | PostgreSQL <span class="image icon"><img src="images/Plogo.png" alt="PostgreSQL" /></span> | </h2> <br />
+									<h3>Exploratory Analysis on the Global Impact of Coronavirus</h3>
+								</header>
+										<p> PostgreSQL was used to explore and generate various statistics about the global impact of the Coronavirus. The code used the SELECT, WHERE, GROUP BY, and other aggregate functions like MAX and COUNT to provide statistical insights about COVID-19.
+                                        </p>
+									<hr />
+<div class='tableauPlaceholder' id='viz1695481901552' style='position: relative'><noscript><a href='#'><img alt='Coronavirus Global ImpactPandemic Annually ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;XW&#47;XWTZCCTZG&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;XWTZCCTZG' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;XW&#47;XWTZCCTZG&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1695481901552');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+									<p><b>Case Thesis:</b> How has the Coronavirus Pandemic affected the global population?</p>
+									<p>The Coronavirus (COVID-19) pandemic has had a significant global impact, affecting nearly every country in the world. The virus has caused millions of deaths, disrupted economies, and changed the way we live our lives. </br>
+									There were multiple ways to evaluate the global impact based on cases, deaths, and vaccinations. All of these features were used within my exploratory analysis. </br> The following questions were investigated to provide key metrics.</p>
+									<ul>
+										<li>What year had the highest Infection rate?</li>
+											<p><i>We can see that 2022 lead the pack in overall infection cases. It had a overall total of over a billion new cases globally.</i></p>
+										<li>What was the percentage of total cases in the United States compared to the overall population?</li>
+											<p><i>As of May 2023, the total cases were 30.57% of the total population in the United States. This was the equalivalent of about 103 million cases. </i></p>
+										<li>What location had the highest Death rate?</li>
+											<p><i>Overall the United States has the highest death count compared to over countries. It had the most cases and deaths, but not in vaccinations. The US trailed behind in vaccinations compared to other countries. For example, China had the most vaccinations, but the least amount of deaths and cases. This could hint toward a correlation between the deaths and vaccinations.</i></p>
+									</ul>
+						<!-- Preformatted Code -->
+                            <pre><code>
+---View the Original Data
+SELECT * 
+FROM public.deaths
+								
+-- Compact view of the date, total cases, new cases, and total deaths
+								
+SELECT location, date, total_cases, new_cases, total_deaths, population
+FROM public.deaths
+WHERE continent IS NOT NULL;
+								
+--COVID cases did not have any data in the early parts of 2020 so we will see a lot of null values
+---- Take a look at the total cases versus the total deaths, computed total percentage of deaths
+								
+SELECT location, date, total_cases, total_deaths, (total_deaths)/(total_cases)*100 as death_percentage
+FROM public.deaths
+WHERE continent IS NOT NULL; 
+								
+---Narrow it down to just the US to see those statistics.
+								
+SELECT location, date, total_cases, total_deaths, (total_deaths)/(total_cases)*100 as death_percentage
+FROM public.deaths
+WHERE location LIKE '%States%'
+ORDER BY death_percentage DESC;
+								
+---View total cases compared to population limited to the US
+SELECT location, date, total_cases, population, (total_cases)/(population)*100 as case_percentage
+FROM public.deaths
+ORDER BY case_percentage DESC;
+								
+--- View countries with highest infection rate in comparison to population
+								
+SELECT location, MAX(total_cases) AS highestcaseCount, population, MAX((total_cases)/(population))*100 AS highestinfectionCount
+FROM public.deaths
+WHERE continent IS NOT NULL
+GROUP BY population, location
+ORDER BY highestinfectionCount DESC;
+								
+--- View of countries with highest death rate per location
+								
+SELECT location, MAX(total_deaths) AS highestdeathCount
+FROM public.deaths
+WHERE continent IS NOT NULL
+GROUP BY location
+ORDER BY highestdeathCount DESC;
+								
+---Continent with highest number of deaths
+								
+SELECT continent, MAX(total_deaths) AS highestdeathCount
+FROM public.deaths
+WHERE continent IS NOT NULL
+GROUP BY continent
+ORDER BY highestdeathCount DESC;
+								
+--- Global death percentages.
+								
+SELECT location, date, total_cases, total_deaths, (total_deaths/total_cases)*100 AS death_percentage
+FROM public.deaths
+WHERE continent IS NOT NULL;
+								
+--- Showing the global sum of new cases per date
+								
+SELECT date, SUM(new_cases) AS cases_sum
+FROM public.deaths
+WHERE continent IS NOT NULL
+GROUP BY date
+ORDER BY cases_sum DESC;
+								
+--- Viewing new Deaths versus new cases.
+								
+SELECT date, SUM(new_cases) AS cases_sum, SUM(new_deaths) AS deaths_sum, SUM(new_deaths)/SUM(new_cases)*100 AS death_percentage
+FROM public.deaths
+WHERE new_cases <> 0 AND continent IS NOT NULL
+GROUP BY date
+ORDER BY death_percentage DESC;
+								
+								
+--- Viewing the second table of COVID vaccinations
+								
+SELECT *
+FROM public.vaccines;
+								
+--- Joining tables Death and Vaccines
+								
+SELECT *
+FROM public.deaths AS d
+JOIN public.vaccines AS v
+ON d.location = v.location
+AND d.date = v.date
+								
+--- Viewing total population versus vaccinations
+/*Vaccines were not introduced until the end of 2020. 
+I filtered out the null values to give us an idea of where the vaccination counts were located.*/
+								
+SELECT d.continent, d.location, d.date, d.population, v.new_vaccinations
+FROM public.deaths AS d
+JOIN public.vaccines AS v
+ON d.location = v.location
+AND d.date = v.date
+WHERE d.continent IS NOT NULL AND v.new_vaccinations IS NOT NULL
+ORDER BY d.date
+								
+/* Viewing total vaccinations within each location, providing a rolling count of vaccinated, 
+	and percentage of vaccinated compared to the total population with the use of a CTE */
+								
+WITH popvsvac(continent, location, date, population, new_vaccinations, rollingvaccinations)
+AS
+(
+SELECT d.continent, d.location, d.date, d.population, v.new_vaccinations, 
+SUM(v.new_vaccinations) OVER(PARTITION BY d.location ORDER BY d.location, d.date) AS rollingvaccinations
+FROM public.deaths AS d
+JOIN public.vaccines AS v
+ON d.location = v.location
+AND d.date = v.date
+WHERE d.continent IS NOT NULL AND v.new_vaccinations IS NOT NULL
+)
+								
+SELECT *, rollingvaccinations/population*100 AS vaccinated_percentage
+FROM popvsvac;
+								
+---- Creating a View of the same data just to show different ways to capture this data.
+								
+CREATE VIEW percentagepopvaccinated AS
+(
+SELECT d.continent, d.location, d.date, d.population, v.new_vaccinations, 
+SUM(v.new_vaccinations) OVER(PARTITION BY d.location ORDER BY d.location, d.date) AS rollingvaccinations
+FROM public.deaths AS d
+JOIN public.vaccines AS v
+ON d.location = v.location
+AND d.date = v.date
+WHERE d.continent IS NOT NULL AND v.new_vaccinations IS NOT NULL
+)
+								
+SELECT * 
+FROM percentagepopvaccinated;
+
+
+</code></pre>
+
+<br />
+<h4>Thanks for taking time to peruse!</h4>
+<p>To view the compiled files and SQL code. Please see my <a href="https://github.com/alexaryanfisher/Portfolio/blob/master/DataExploration-SQL/README.md">GitHub</a>.
+							</section>
+				<!-- Footer -->
+				<footer id="footer">
+					<section class="split contact">
+						<section class="alt">
+							<h3>Location</h3>
+							<p>Southeastern, NC</p>
+						</section>
+						<section>
+							<h3>Email</h3>
+							<p><a href="alexa@alexaryanfisher.com">alexa@alexaryanfisher.com</a></p>
+						</section>
+				</footer>
+
+		<!-- Copyright -->
+		<div id="copyright">
+			<ul>
+				<li>&copy; Alexa Ryan Fisher</li>
+				<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+
+	</div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
