@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Alexa Fisher, Data Analyst</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#" class="icon solid fa-home"><span>Home</span></a>
+						<a href="#portfolio" class="icon solid fa-folder"><span>Portfolio</span></a>
+						<a href="#about" class="icon solid fa-envelope"><span>About</span></a>
+						<a href="https://www.linkedin.com/in/alexaryanfisher" class="icon brands fa-linkedin"><span>LinkedIn</span></a>
+						<a href="https://www.github.com/alexaryanfisher" class="icon brands fa-github"><span>Github</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Me -->
+							<article id="home" class="panel intro">
+								<header>
+									<h1>Alexa Fisher</h1>
+									<p>Data Analyst</p>
+								</header>
+								<a href="#portfolio" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>See my portfolio</span></span>
+									<img src="images/lex.jpg" alt="" />
+								</a>
+							</article>
+
+						<!-- Portfolio -->
+							<article id="portfolio" class="panel">
+								<header>
+									<h2>Portfolio</h2>
+								</header>
+								<section>
+									<div class="row">
+										<div class="col-3 col-6-medium col-12-small">
+											<a href="#project1" class="image fit"><img src="images/intention.jpg" alt="Predictive Analysis"></a>
+										</div>
+										<div class="col-3 col-6-medium col-12-small">
+											<a href="#project2" class="image fit"><img src="images/covid19.jpg" alt="Data Analysis"></a>
+										</div>
+										<div class="col-3 col-6-medium col-12-small">
+											<a href="#project3" class="image fit"><img src="images/Picture13.jpg" alt="Tableau Dashboard"></a>
+										</div>
+										<div class="col-3 col-6-medium col-12-small">
+											<a href="#project4" class="image fit"><img src="images/jobs.jpg" alt="Data Preprocessing"></a>
+										</div>
+																		
+									</div>
+								</section>
+							</article>
+
+						<!-- About -->
+							<article id="about" class="panel">
+								<header>
+									<h2>About Me</h2>
+								</header>
+								Hi, I am Alexa. I have a Bachelor of Science degree in Information Technology and a Master of Science degree in Data Analytics from Western Governors University. I am passionate about data and the various ways that it can be manipulated to solve problems within the day-to-day business processes. <br/><br/>
+								<h3>Contact Me:  </h3><br/>
+								<span class="icon solid fa-envelope"><span>  :     alexa@alexaryanfisher.com</span>
+								<br/>
+								<span class="icon solid fa-location-arrow"><span>  : Southeastern, North Carolina, USA</span>
+							</article>
+						
+						<!-- Project1 -->
+							<article id="project1" class="panel">
+								<header>
+									<h2>Regression Analysis of Online Purchase Intention</h2>
+								</header>
+								<p>Demonstrated prowess in predictive analytics by developing a robust model to forecast online purchasing behavior with an impressive accuracy rate of 88%. This innovative solution empowered e-commerce enterprises to identify and capitalize on revenue-generating opportunities, showcasing our ability to deliver tangible business outcomes through data-driven insights.</p>
+								<p><b>Case Thesis:</b> What attributes within the captured Google Analytics metrics can contribute to the possibility of a customer purchasing an item?</p>
+								The null and alternative hypotheses were as follows:
+										<br/><i>Null hypothesis-</i>The logistic regression model shows that the predictor variable of “Revenue” and the explanatory variables do not have a statistically significant relationship.
+										<br/><i>Alternative hypothesis-</i>The logistic regression model shows a statistically significant relationship between the predictor variable “Revenue” and explanatory variables.
+										<br/><br/>				
+										<b>Evaluation Metrics:</b> To reject the null hypothesis, the optimized logistic regression model accuracy score of greater than 80% and statistically significant attributes were noted. A p-value of less than 0.05 marked statistical significance. To fail to reject the hypothesis, the model would have a p-value greater than 0.05, which meant there was no statistically significant relationship between the target and explanatory variables.
+										<br/><br/>With the increasing rise of online purchasing in current society, using Google Analytics within e-commerce offered insights to increase profitability. The metrics captured the user behavior within the website. These included the number of times each page was visited, the time duration in seconds a user interacted with the page, or an item was purchased i.e., revenue was obtained. Logistic Regression could identify if any of these metrics provided a significant relationship between whether an item was purchased or not. This would be an ideal method for narrowing the scope of the metrics to be used for strategic marketing. </p>
+									<ul>
+										
+										<li>Data Analysis Process</li>
+											<p><i>The initial regression model utilized the target variable of “Revenue” along with all the explanatory variables within the prepared dataset. The initial regression model showed the various evaluation metrics identifying the goodness of fit measurement. The model revealed a LLR p-value of 0.0 deeming the overall model statistically significant and a pseudo r-squared measure of 30.34%.</i></p>
+										<img src="images/intiallogit.png" alt="Logit Initial">
+											<p>The train_test_split was generated with a 70:30 ratio. Seventy percent of the dataset went to training, with thirty percent allocated to test data. The logistic regression score had an ideal success of 88.13%. The regression model was summarized with the following prediction results: True positive predictions: 3035, True negative predictions: 208, False positive predictions: 352, and False negative predictions: 67. This was plotted within a confusion matrix for graphical visualizations. The prediction accuracy score of the model was 89% as shown in the classification report.</p>
+										<img src="images/initialcm.png" alt="Initial Confusion Matrix">
+										<img src="images/intialacc.jpg" alt="Initial Accuracy Score">
+											<p>The optimized model was reduced via the backward stepwise elimination method. This reduction kept only the variables with p-values of less than 0.05. It reduced the variables from the initial model’s thirteen to eight key attributes.</p>
+										<img src="images/optmizlogit.png" alt="Logit Optimized">
+											<p>The same train_test_split ratio was utilized to provide an adequate comparison between the modeling. The optimized logistic regression score was slightly higher at 88.47%. The optimized model’s prediction results were summarized as follows: True positive predictions: 3035, True negative predictions: 205, False positive predictions: 355, and False negative predictions: 67. The prediction accuracy score was slightly lower at 88%.</p>
+										<img src="images/optcm.png" alt="Optimized Confusion Matrix"><img src="images/optacc.jpg" alt="Optimized Accuracy Score">
+										<p>Overall, the optimized modeling was deemed successful based on the z-statistics found within the logit summary along with the higher model score. The z-statistics of the optimized model provided a better statistical fit due to the strength of the predictors. A z-statistic value further from zero meant the stronger its role was as a predictor variable. These statistics were larger in the optimized model. For example: “PageValues” with a z-statistic value of “34.035” within the Optimized model, but “33.91” within the initial.</p>
+											<li>Study Findings</li>
+											<p><i>As noted previously, the optimized model's prediction accuracy score was 88%. This exceeds the evaluation metric threshold of 80%. It deemed the optimized model an effective logistic regression model. The second metric of success was the identification of attributes with statistical significance. This was noted by the eight explanatory variables with a p-value of less than 0.05. A further reduction to narrow the scope of contributing attributes was identified with the usage of z-statistics. All of these metrics were needed to successfully reject the null hypothesis.</i></p>
+										<img src="images/studyfinding.png" alt="Study Findings">
+										<li>Limitations</li>
+											<p><i>The main limitations of this study were related to the time period of the dataset. The data was limited to a one-year period. There was not a clear identification of what year was captured or even if this was a typical year in general. E-commerce has grown vastly in the past decade, especially during the COVID-19 pandemic. The lack of specifics to the actual year captured within the data could restrict the resulting outcomes and attributes.
+												<br/>Another limitation was some minor issues with the data. The data was noted as a one- year period to capture all the annual holidays. Unfortunately, the dataset was missing some key observations such as the sessions within January and April. This would lose data that could be provided by holiday sales in those months including after Christmas sales, New Year's, and Easter.
+												</i></p>
+											<li>Proposed Actions</li>
+											<p><i>The key attributes could lead the e-commerce company to a few proposed actions. These actions could include the following:
+												<br/>
+												•	The investigation of contributions based on Page Values<br/>
+												•	Identification of key features and page duration<br/>
+												•	Various Sales/Retention discounts and advertisements.<br/>
+												This could prompt analysis of those specific duration metrics and their strengths to help in marketing brainstorming. The marketing team could initiate further analyses on attributes and how a user’s page duration could contribute to sales. Sales and retention teams could increase retention and sales efforts via promos and targeted advertisements.
+												</i></p>
+											<li>Expected Benefits of Study</li>
+											<p><i>The expected benefits of this logistic regression model could relate to the identification of key attributes for improved business strategies in various departments within the e-commerce company. As noted previously, this would provide various insights into which attributes would contribute to revenue occurring. For example, the marketing team would focus on strategies to increase revenue for low-performing pages based on their specific page values. Similarly, the sales team can focus attention on the high revenue months and revenue obtained during holidays to suggest seasonal and holiday pricing. Lastly, the customer retention team can provide targeted campaigns to increase customer retention of returning customers via promo codes and other discounting techniques.</i></p>
+									</ul>
+
+								To view the compiled files, sources, and Python code. Please see my <a href="https://github.com/alexaryanfisher/Portfolio_WGU/blob/master/D214/abstract.md">GitHub</a>.
+								<br />
+								<br />
+								<b>Tools: Python</b>         <span class="image icon"><img src="images/pythonlogo.png" alt="Python" /></span>
+							    </p>
+							</article>
+						
+						<!-- Project2 -->
+							<article id="project2" class="panel">
+								<header>
+									<h2>Data Analysis on Coronavirus Global Impact</h2>
+								</header>
+										<p> Led a comprehensive exploratory analysis utilizing PostgreSQL to uncover the intricate facets of COVID-19's global impact. Leveraging advanced statistical techniques, I unearthed critical insights into infection rates, mortality trends, and vaccination dynamics. Findings, including identifying peak infection years and assessing case proportions within the United States, showcase my ability to extract actionable intelligence from complex datasets. This was further expanded with the use of Tableau to visualize the key metrics for readability.
+                                        </p>
+									<p><b>Case Thesis:</b> How has the Coronavirus Pandemic affected the global population?</p>
+									<p>The Coronavirus (COVID-19) pandemic has had a significant global impact, affecting nearly every country in the world. The virus has caused millions of deaths, disrupted economies, and changed the way we live our lives. There were multiple ways to evaluate the global impact based on cases, deaths, and vaccinations. All of these features were used in the exploratory analysis.<br/><br/>The following questions were investigated to provide key metrics.</p>
+									<ul>
+										<img src="images/caseannual.png" alt="Annual Infection Rate">
+										<li>What year had the highest Infection rate?</li>
+											<p><i>We can see that 2022 leads the pack in overall infection cases. It had an overall total of over a billion new cases globally</i></p>
+										<img src="images/infectionrate.png" alt="InfectionPercentage">
+										<li>What was the percentage of total cases in the United States compared to the overall population?</li>
+											<p><i>As of May 2023, the total cases were 30.57% of the total population in the United States. This was the equivalent of about 103 million cases.</i></p>
+										<img src="images/deathvsvaccination.png" alt="Deaths vs Vaccinations">
+										<img src="images/deathvsvaccination2.png" alt="Deaths ">
+										<li>What location had the highest Death rate?</li>
+											<p><i>Overall, the United States has the highest death count compared to other countries. It had the most cases and deaths, but not in vaccinations. The US trailed behind in vaccinations compared to other countries. For example, China had the most vaccinations, but the least number of deaths and cases. This could hint toward a correlation between the deaths and vaccinations.</i></p>
+									</ul>
+
+								To view the compiled files and SQL code. Please see my <a href="https://github.com/alexaryanfisher/Portfolio/blob/master/DataExploration-SQL/README.md">GitHub</a>. Visualizations can be found on my <a href="https://public.tableau.com/views/COVIDGlobal_Green/CoronavirusGlobalImpact?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link">Tableau Public</a>.
+								<br />
+								<br />
+								<b>Tools: PostgreSQL</b> <span class="image icon"><img src="images/Plogo.png" alt="PostgreSQL" /></span><b> ;  Tableau</b><span class="image icon"><img src="images/tableau.png" alt="Tableau" /></span>
+
+							</article>
+						
+						<!-- Project3 -->
+							<article id="project3" class="panel">
+								<header>
+									<h2>Localize VS National Telecommunication Analysis</h2>
+								</header>
+								<p>Pioneered an advanced analytical approach to navigating customer churn dynamics, leveraging Python and Tableau to develop an interactive dashboard tailored to the strategic needs of stakeholders. By providing actionable insights into customer behaviors and retention strategies, our solution empowered organizations to drive sustainable growth and enhance customer satisfaction.</p>
+									<p><b>Case Thesis:</b> Build an interactive dashboard for data analysis of a telecommunications company's customer churn. </p>
+									<p>The dashboard was presented to a panel consisting of the Senior Vice President of Customer Experience (SVP), the Executive Vice President of Sales (EVP), and an executive panel of regional Vice Presidents.<br/>
+									Each of these members had diverse needs in terms of the information they wanted to gain insight for:</p>
+									<ul>
+										<li>Executive Vice President of Sales: Interested in customer retention for active clientele of the telecommunications company.</li>
+										<li>Executive Vice President of Customer Experience: Focused interest in add-on services to advocate for customer promotions.</li>
+										<li>Regional Panel of Vice Presidents: Narrowed scope to the interaction within each general region of the United States.</li>
+									</ul>
+									<br/>
+									<p>The dashboard was designed to meet the needs of all stakeholders by providing a variety of filtering and visualization options. Stakeholders could filter the data by gender, state location, and internet service type. They could also view the data in a variety of visualizations, such as bar charts, stacked bar charts, and an interactive map.
+									The dashboard was well-received by the stakeholders, who found it to be a valuable tool for understanding customer churn and developing strategies to improve retention.</p>
+									<a href="https://public.tableau.com/app/profile/alexa.fisher/viz/WGUvsIBM-211Dashboard/WGUvsIBM" class="image fit"><img src="images/WGU vs IBM.png" alt="WGUvsIBM"></a><br/>
+									View the complete project here along with files on my <a href="https://github.com/alexaryanfisher/Portfolio_WGU/blob/master/D210/abstract.md">Github</a>. <br/>Full interactive dashboard can be found on my <a href="https://public.tableau.com/shared/FXH296T36?:display_count=n&:origin=viz_share_link">Tableau Public</a>.
+									<br/><br/><b>Tools: Python</b> <span class="image icon"><img src="images/pythonlogo.png" alt="Python" /></span><b> ;  Tableau</b><span class="image icon"><img src="images/tableau.png" alt="Tableau" /></span>
+								</p>
+
+							</article>
+					
+						<!-- Project4 -->
+							<article id="project4" class="panel">
+								<header>
+									<h2>Data PreProcessing for Data Science Job Listings</h2>
+								</header>
+								<p>Demonstrated expertise in data scrubbing by spearheading the refinement of Data Science job listings sourced from Glassdoor. Through meticulous attention to detail and proficiency in PostgreSQL, I streamlined job titles, eliminated redundancies, and rectified inconsistencies, transforming raw data into a valuable asset for strategic decision-making.</p>
+									<p><b>Case Thesis: </b>What are the different types of Data Science jobs currently on the market and what are their salary ranges?</p>
+									<p>The increase in data science jobs is reflected in the growing importance of data analytics in driving business success and innovation across many industries, along with the continuous evolution of technology and workforce.</p>
+									<p>The field of data science continues to experience a significant surge in job opportunities, driven by several key factors:</p>
+									<ul>
+										<li><b>Industry Demand:  </b>Companies across various sectors continued to recognize the importance of data-driven decision-making, leading to an increased demand for skilled data scientists.</li>
+										<li><b>Advancements in Technology:  </b>Rapid advancements in technology, particularly in areas such as artificial intelligence, machine learning, and big data analytics, created new opportunities for data scientists to leverage these tools and techniques.</li>
+										<li><b>Ever-growing Expansion of Data-Driven Roles: </b>Data science roles expanded beyond traditional tech companies, with industries like finance, healthcare, retail, and manufacturing increasingly relying on data analytics to improve operations, customer experiences, and strategic planning.</li>
+										<li><b>Competitive Salaries: </b>With high demand and a relatively low supply of skilled data scientists, salaries, and benefits packages for professionals in this field remained competitive, attracting more individuals to pursue careers in data science.</li>
+									</ul>
+									<p>The Data Scrubbing Process included the following steps:</p>
+									<ul>
+										<li>Captured different data science job titles.</li>
+										<li>Standardized the job titles to be uniform based on title name.</li>
+										<li>Removed missing values or blanks.</li>
+										<li>Separated the salary and location into new columns for future analysis.</li>
+										<li>Resolved and removed duplicates.</li>
+										<li>Corrected the data types for the variables.</li>
+										<li>Removed unneccessary variables.</li>
+									</ul>
+									<p>In the realm of data science, there are several popular job titles that denote specific roles and responsibilities within the field. These titles include Data Analyst, Data Scientist, Data Engineer, Machine Learning Scientist, and Machine Learning Engineer. Each of these positions encompasses distinct skill sets and focuses within the broader domain of data science.
+										<br/>In addition to these popular job titles, there are other, less common roles within the data science landscape. These roles may encompass a wide range of responsibilities and may vary depending on the specific needs and objectives of organizations. Such roles often fall under the category of "Other" and may include titles like Business Intelligence Analyst, Data Architect, Software Engineer - Data Science, or AI Researcher.
+										<br/>
+										Overall, these job titles represent the diverse skill sets and roles within the data science field, catering to the increasing demand for professionals who can harness the power of data to drive insights, innovation, and business success.</p>
+									<img src="images/jobs.png" alt="Jobs">
+									<p> Salaries vary significantly based on factors such as experience, skill level, geographic location, and industry. </p>
+										<img src="images/salary.png" alt="Salary"><br />
+										<br />
+									To view the compiled files and SQL code. Please see my <a href="https://github.com/alexaryanfisher/Portfolio/blob/master/DataCleaning-SQL/README.md">GitHub</a>.
+									<br />
+									<br />
+									<b>Tools: PostgreSQL</b> <span class="image icon"><img src="images/Plogo.png" alt="PostgreSQL" /></span><b>
+								</p>		
+							</article>
+
+					</div>
+					
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Alexa Ryan Fisher</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
