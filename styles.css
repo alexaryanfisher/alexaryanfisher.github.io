@@ -1,0 +1,162 @@
+/* CSS for website */
+
+@import url('clash-display.css');
+@import url('pencerio.css');
+
+/* Color Theme for Website */
+:root {
+    --background-beige: #fcf8ed; /* beige background */
+    --text-dark-green: #151a12; /* dark forest green text */
+    --accent-dark-beige: #c9be9f; /* darker beige, used for active links */
+    --accent-olive-green: #293324; /* olive green for button/accents */
+    --button-hover-dark-green: #151a12; /* dark forest green*/
+    --nav-bg-dark-green: #151a12; /* dark forest green background */
+    --navbar-text-beige: #fcf8ed; /* beige text */
+    --background-medium-beige: #f0ebdf; /* medium beige background for jumbotron */
+    --border-brown-custom: #3d3520; /* dark brown border color for contact form */
+}
+
+/* Tag Selector: Body Styles */
+body {
+    font-family: 'Clash Display', san-serif;
+    background-color: var(--background-beige);
+    color: var(--text-dark-green);
+    line-height: 1.6;
+}
+
+/* Tag Selector: Heading 1 Styles */
+h1 {
+    color: var(--accent-olive-green);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Tag Selector: Other Heading Styles */
+h2, h3, h4, h5, h6 {
+    color: var(--text-dark-green);
+}
+
+/* ID Selector: Main Content area */
+#main-content {
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+/* Class Selector: Custom Dark background for navbar and footer */
+.bg-dark-custom {
+    background-color: var(--nav-bg-dark-green);
+}
+
+/* Class Selector: Custom medium background for jumbotron/forms */
+.bg-medium-beige-custom {
+    background-color: var(--background-medium-beige);
+}
+
+/* Class Selector: Dark Beige text */
+.text-dark-beige {
+   color: var(--accent-dark-beige);
+}
+
+/* Class Selector: Olive Green text */
+.text-olive-green {
+    color: var(--accent-olive-green);
+}
+
+/* Class Selector: Bootstrap Navbar link text color */
+.navbar-dark .navbar-nav .nav-link {
+    color: var(--navbar-text-beige);
+}
+
+/* Class Selector: Bootstrap Navbar active link text color */
+.navbar-dark .navbar-nav .nav-item.active .nav-link {
+    color: var(--accent-dark-beige);
+}
+
+/* Tag Selector: Image styles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Class Selector: Profile Image Style*/
+.profile-img {
+    border: 5px solid var(--accent-olive-green);
+    object-fit : cover;
+}
+
+/* Class Selector: Card Style */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: none;
+    background-color: var(--background-beige);
+}
+
+/* Class Selector: Project Item Style */
+.project-item {
+    transition: 0.2s ease-in-out;
+}
+
+/* Class Selector: Project Item Style */
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Class Selector: Button Style */
+.btn-primary.bg-dark-green {
+    background-color: var(--accent-olive-green);
+    border-color: var(--accent-olive-green);
+}
+
+/* Class Selector: Button Style */
+.btn-primary.bg-dark-green:hover {
+    background-color: var(--nav-bg-dark-green);
+    border-color: var(--nav-bg-dark-green);
+}
+
+/* Class Selector: Rounded Top Corners for images within Cards */
+.rounded-top-corners {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Class Selector: List items Style */
+.skills-list .list-group-item {
+    background-color: transparent;
+    border-color: rgba(0,0,0,0.05);
+    color: var(--text-olive-green);
+}
+
+/* Class Selector: Form Input Style*/
+.form-control {
+    background-color: var(--background-beige);
+    border-color: var(--border-brown-custom);
+    color: var(--text-olive-green);
+}
+
+.form-control:focus {
+    border-color: var(--accent-olive-green);
+    background-color: var(--background-beige);
+    box-shadow: 0 0 0 0.1rem rgb(43, 42, 38);
+    color: var(--text-dark-green);
+    outline: none;
+}
+
+/* Media Query for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+    .jumbotron h1 {
+        font-size: 2.5rem;
+    }
+    .jumbotron p.lead {
+        font-size: 1.1rem;
+    }
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+}
