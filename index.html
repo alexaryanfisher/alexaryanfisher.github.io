@@ -1,166 +1,105 @@
-<!DOCTYPE HTML>
-<!--
-	Astral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Alexa Fisher, Data Analyst</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
 
-		<!-- Wrapper-->
-			<div id="wrapper">
+<html lang="en">
 
-				<!-- Nav -->
-					<nav id="nav">
-						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#portfolio" class="icon solid fa-folder"><span>Portfolio</span></a>
-						<a href="#about" class="icon solid fa-envelope"><span>About</span></a>
-						<a href="https://www.linkedin.com/in/alexaryanfisher" class="icon brands fa-linkedin"><span>LinkedIn</span></a>
-						<a href="https://www.github.com/alexaryanfisher" class="icon brands fa-github"><span>Github</span></a>
-					</nav>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" contect="width=device-width, initial-scale=1">
+        <title>Alexa Fisher, Data Analyst - Home</title>
+        <!-- Bootstrap --->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <!--CSS Sheet-->
+        <link href="styles.css" rel="stylesheet">
+    </head>
 
-				<!-- Main -->
-					<div id="main">
+    <body>
+        <header>
+            <!-- Reference: https://getbootstrap.com/docs/4.3/components/navbar/ -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark-custom">
+                <a class="navbar-brand" href="index.html"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-						<!-- Me -->
-							<article id="home" class="panel intro">
-								<header>
-									<h1>Alexa Fisher</h1>
-									<p></p>
-								</header>
-								<a href="#portfolio" class="jumplink pic">
-									<span class="arrow icon solid fa-chevron-right"><span>See my portfolio</span></span>
-									<img src="images/lex.jpg" alt="" />
-								</a>
-							</article>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html"> Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html"> About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="projects.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Projects
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item disabled" href="projects.html">Project 1</a>
+                                <a class="dropdown-item disabled" href="projects.html">Project 2</a>
+                                <a class="dropdown-item disabled" href="projects.html">Project 3</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html"> Contact </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
 
-						<!-- Portfolio -->
-							<article id="portfolio" class="panel">
-								<header>
-									<h2>Portfolio</h2>
-								</header>
-								<section>
-									<!--<div class="row">
-										<div class="col-3 col-6-medium col-12-small">
-											<a href="#project1" class="image fit"><img src="images/intention.jpg" alt="Predictive Analysis"></a>
-										</div>
-										<div class="col-3 col-6-medium col-12-small">
-											<a href="#project2" class="image fit"><img src="images/covid19.jpg" alt="Data Analysis"></a>
-										</div>
-										<div class="col-3 col-6-medium col-12-small">
-											<a href="#project3" class="image fit"><img src="images/Picture13.jpg" alt="Tableau Dashboard"></a>
-										</div>
-										<div class="col-3 col-6-medium col-12-small">
-											<a href="#project4" class="image fit"><img src="images/jobs.jpg" alt="Data Preprocessing"></a>
-										</div>
-																		
-									</div> -->
-									Under Construction, new projects pending...
-								</section>
-							</article>
+        <main id="main-content" class="container my-5">
+            <div class="jumbotron text-center bg-medium-beige-custom rounded shadow-sm">
+                <h1 class="display-4 text-olive-green">Data Analytics Portfolio</h1>
+                <p class="lead text-dark-green">Transforming raw data into actionable insights.</p>
+                <button id="projectbutton" onlick="projects.html" class="btn btn-primary btn-lg bg-dark-green border-dark-green"> Projects </button>
+            </div>
 
-						<!-- About -->
-							<article id="about" class="panel">
-								<header>
-									<h2>About Me</h2>
-								</header>
-								Hi, I am Alexa. I am currently pursuing a Ph.D. in Information Technology with an emphasis on Computer Science at the University of Cumberlands. I hold a Master's in Data Analytics and a Bachelor's in Information Technology from Western Governors University.
-								<br/>
-								<h3>Contact Me:  </h3><br/>
-								<span class="icon solid fa-envelope"><span>  :     alexaryanfish@gmail.com</span>
-								<br/>
-								<span class="icon solid fa-location-arrow"><span>  : Southeastern, North Carolina, USA</span>
-							</article>
-						<!--
-						<!-- Project1 --><!--
-							<article id="project1" class="panel">
-								<header>
-									<h2>Regression Analysis of Online Purchase Intention</h2>
-								</header>
-								<p>Demonstrated prowess in predictive analytics by developing a robust regression model to forecast online purchasing behavior with an impressive accuracy rate of 88%. This innovative solution empowered e-commerce enterprises to identify and capitalize on revenue-generating opportunities, showcasing the ability to deliver tangible business outcomes through data-driven insights.</p>
-								<p>Project <a href="https://github.com/alexaryanfisher/Portfolio_WGU/blob/master/D214/abstract.md"> Link</a> .
-								<br />
-								<br />
-								<b>Skills / Duties:</b> Data Preprocessing, Feature Selection, Statistical Analysis, Regression Modeling, Data Visualization, Hypothesis testing, and Interpretation.
-								<br />	
-								<br />
-								<b>Tools: Python</b> <span class="image icon"><img src="images/pythonlogo.png" alt="Python" /></span> ; <b>MS PowerPoint</b> <span class="image icon"><img src="images/ppt_logo.png" alt="PowerPoint" /></span> ; <b>Jupyter Notebook</b> <span class="image icon"><img src="images/jn.png" alt="Juptyer Notebook" /></span>
-							    </p>
-							</article>
-						
-						<!-- Project2 --><!--
-							<article id="project2" class="panel">
-								<header>
-									<h2>Exploratory Data Analysis on Coronavirus Global Impact</h2>
-								</header>
-								<p> Led a comprehensive exploratory analysis utilizing PostgreSQL to uncover the intricate facets of COVID-19's global impact. Leveraging advanced statistical techniques, I unearthed critical insights into infection rates, mortality trends, and vaccination dynamics. Findings, including identifying peak infection years and assessing case proportions within the United States, showcase my ability to extract actionable intelligence from complex datasets. This was further expanded using Tableau to visualize the key metrics for readability.</p>
-								<p>Project <a href="https://github.com/alexaryanfisher/Portfolio/blob/master/DataExploration-SQL/README.md">Link</a>. Additional <a href="https://public.tableau.com/views/COVIDGlobal_Green/CoronavirusGlobalImpact?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link">visualizations</a>.</p>
-								<br />
-								<br />
-								<b>Skills / Duties:</b> Data Preprocessing, Pattern Recognition, Statistical Analysis, Data Visualization, and Interpretation.
-								<br />	
-								<br />
-								<b>Tools: PostgreSQL</b> <span class="image icon"><img src="images/Plogo.png" alt="Postgres" /></span><b> ;  Tableau</b><span class="image icon"><img src="images/tableau.png" alt="Tableau" /></span>
+            <section class="my-5">
+                <h2 class="text-center text-olive-green mb-4">Services</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="images/datacleaning.jpg" class="card-img-top rounded-top-corners" alt="Data Cleaning Icon">
+                            <div class="card-body">
+                                <h5 class="card-title text-dark-green"> Pending..</h5>
+                                <p class="card-text text-olive-green"> Pending...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="images/visualization.jpg" class="card-img-top rounded-top-corners" alt="Data Visualization Icon">
+                            <div class="card-body">
+                                <h5 class="card-title text-dark-green"> Pending</h5>
+                                <p class="card-text text-olive-green"> ...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="images/statistical.jpg" class="card-img-top rounded-top-corners" alt="Statistical Analysis Icon">
+                            <div class="card-body">
+                                <h5 class="card-title text-dark-green"> Pending</h5>
+                                <p class="card-text text-olive-green"> ... </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-							</article>
-						
-						<!-- Project3 --><!--
-							<article id="project3" class="panel">
-								<header>
-									<h2>Localize VS National Telecommunication Analysis</h2>
-								</header>
-								<p>Pioneered an advanced analytical approach to navigating customer churn dynamics, leveraging Python and Tableau to develop an interactive dashboard tailored to the strategic needs of stakeholders. By providing actionable insights into customer behaviors and retention strategies, our solution empowers organizations to drive sustainable growth and enhance customer satisfaction.</p>
-								<p>Project <a href="https://github.com/alexaryanfisher/Portfolio_WGU/blob/master/D210/abstract.md">Link</a>. Full interactive <a href="https://public.tableau.com/app/profile/alexa.fisher/vizzes">dashboard</a>.</p>
-								<br />
-								<br />
-								<b>Skills / Duties:</b> Data Preprocessing, Data Visualization, and Interpretation.
-								<br />	
-								<br />
-								<b>Tools: Python</b> <span class="image icon"><img src="images/pythonlogo.png" alt="Python" /></span><b> ;  Tableau</b><span class="image icon"><img src="images/tableau.png" alt="Tableau" /></span> ; <b>Jupyter Notebook</b> <span class="image icon"><img src="images/jn.png" alt="Juptyer Notebook" /></span>
-								</p>
+        <footer class="bg-dark-custom text-dark-beige text-center py-3">
+            <p>&copy; 2025 Alexa Ryan Fisher. All rights reserved.</p>
+        </footer>
 
-							</article>
-					
-						<!-- Project4 --><!--
-							<article id="project4" class="panel">
-								<header>
-									<h2>Data PreProcessing for Data Science Job Listings</h2>
-								</header>
-								<p>Demonstrated expertise in data scrubbing/cleansing by spearheading the refinement of Data Science job listings sourced from Glassdoor. Through meticulous attention to detail and proficiency in PostgreSQL, I streamlined job titles, eliminated redundancies, and rectified inconsistencies, transforming raw data into a valuable asset for strategic decision-making.</p>
-								<p>Project <a href="https://github.com/alexaryanfisher/Portfolio/blob/master/DataCleaning-SQL/README.md">Link</a>.</p>
-								<br />
-								<br />
-								<b>Skills / Duties:</b> Data Preprocessing, Data Wrangling, and Interpretation.
-								<br />	
-								<br />
-								<b>Tools: Postgres</b> <span class="image icon"><img src="images/Plogo.png" alt="PostgreSQL" /></span>
-								</p>		
-							</article>
+        <!--JavaScript Scripts-->
+        <script>
+            document.getElementById('projectbutton').addEventListener('click', function() {
+                window.location.href = 'projects.html';
+            });
+        </script>
+    </body>
 
-					</div>
-			
-				<!-- Footer -->
-					<div id="footer">
-						<ul class="copyright">
-							<li>&copy; Alexa Ryan Fisher</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>
